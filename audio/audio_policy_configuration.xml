@@ -59,7 +59,7 @@
             </attachedDevices>
             <defaultOutputDevice>Speaker</defaultOutputDevice>
             <mixPorts>
-                <mixPort name="voip_rx" role="source"
+              <mixPort name="voip_rx" role="source"
                          flags="AUDIO_OUTPUT_FLAG_DIRECT|AUDIO_OUTPUT_FLAG_VOIP_RX">
                     <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
                              samplingRates="8000,16000,32000,48000" channelMasks="AUDIO_CHANNEL_OUT_MONO"/>
@@ -374,7 +374,7 @@
         <!-- Remote Submix Audio HAL -->
         <xi:include href="/vendor/etc/audio/sku_holi/r_submix_audio_policy_configuration.xml"/>
 
-        <!-- Bluetooth Audio HAL -->
+         <!-- Bluetooth Audio HAL -->
         <xi:include href="/vendor/etc/audio/sku_holi/bluetooth_audio_policy_configuration.xml"/>
 
     </modules>

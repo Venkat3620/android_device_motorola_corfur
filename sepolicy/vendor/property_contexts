@@ -1,26 +1,19 @@
-# Camera
-persist.camera.				u:object_r:vendor_camera_prop:s0
-ro.boot.camera.config			u:object_r:vendor_camera_sensor_prop:s0
-vendor.camera.config.			u:object_r:vendor_camera_sensor_prop:s0
+# Radio
+vendor.ril.                u:object_r:vendor_radio_prop:s0
 
-# Fingerprint
-persist.vendor.sys.fp.			u:object_r:vendor_fingerprint_prop:s0
-ro.hardware.fp.				u:object_r:vendor_fingerprint_prop:s0
-vendor.fps_hal.				u:object_r:vendor_fingerprint_prop:s0
-vendor.silead.fp.ext.			u:object_r:vendor_fingerprint_prop:s0
+# Motorola
+persist.vendor.nfc.        u:object_r:vendor_mot_nfc_prop:s0
+ro.vendor.hw.              u:object_r:vendor_mot_hw_prop:s0
+ro.vendor.mot.gki.         u:object_r:vendor_mot_hw_prop:s0
+ro.vendor.product.device   u:object_r:vendor_mot_hw_prop:s0
+ro.vendor.product.display  u:object_r:vendor_mot_hw_prop:s0
+ro.vendor.product.hardware.sku.variant          u:object_r:vendor_mot_hw_prop:s0
+ro.vendor.product.model    u:object_r:vendor_mot_hw_prop:s0
+ro.vendor.product.name     u:object_r:vendor_mot_hw_prop:s0
+vendor.hw.touch.           u:object_r:vendor_mot_touch_prop:s0
+vendor.nfc.fw_status       u:object_r:vendor_mot_nfc_prop:s0
 
-# Mlipay
-persist.vendor.sys.pay.			u:object_r:vendor_tee_listener_prop:s0
-persist.vendor.sys.provision.status	u:object_r:vendor_tee_listener_prop:s0
-
-# RIL
-odm.ril.radio.status.			u:object_r:vendor_radio_prop:s0
-odm.ril.radio.status.sim1		u:object_r:vendor_radio_prop:s0
-odm.ril.radio.status.sim2		u:object_r:vendor_radio_prop:s0
-
-# Thermal
-vendor.sys.thermal.			u:object_r:vendor_thermal_normal_prop:s0
-
-# Wi-Fi
-ro.vendor.ril.oem.btmac			u:object_r:vendor_wifi_prop:s0
-ro.vendor.ril.oem.wifimac		u:object_r:vendor_wifi_prop:s0
+# Motorola fingerprint
+persist.vendor.hardware.fingerprint            u:object_r:vendor_mot_fingerprint_prop:s0
+vendor.hw.fps.ident                            u:object_r:vendor_mot_fingerprint_prop:s0
+vendor.hw.fingerprint.status                   u:object_r:vendor_mot_fingerprint_prop:s0

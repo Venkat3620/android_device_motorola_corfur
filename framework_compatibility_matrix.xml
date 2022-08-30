@@ -1,31 +1,9 @@
-<!--
-    Input:
-        vendor_framework_compatibility_matrix.xml
-        vendor_framework_compatibility_matrix.xml
-        vendor_framework_compatibility_matrix.xml
-        dax_framework_compatibility_matrix.xml
-        framework_compatibility_matrix.xml
-        vendor_framework_compatibility_matrix.xml
-        vendor_framework_compatibility_matrix.xml
-        vendor_framework_compatibility_matrix.xml
-        vendor_framework_compatibility_matrix.xml
-        vendor_framework_compatibility_matrix.xml
-        vendor_nfc_framework_compatibility_matrix_pn557.xml
--->
 <compatibility-matrix version="2.0" type="framework">
     <hal format="hidl" optional="true">
         <name>android.hardware.automotive.evs</name>
         <version>1.1</version>
         <interface>
             <name>IEvsEnumerator</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="hidl" optional="true">
-        <name>android.hardware.bluetooth.audio</name>
-        <version>2.1</version>
-        <interface>
-            <name>IBluetoothAudioProvidersFactory</name>
             <instance>default</instance>
         </interface>
     </hal>
@@ -57,14 +35,6 @@
         </interface>
     </hal>
     <hal format="hidl" optional="true">
-        <name>android.hardware.nfc</name>
-        <version>1.2</version>
-        <interface>
-            <name>INfc</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="hidl" optional="true">
         <name>android.hardware.radio</name>
         <version>1.0-4</version>
         <interface>
@@ -87,15 +57,6 @@
         </interface>
     </hal>
     <hal format="hidl" optional="true">
-        <name>android.hardware.secure_element</name>
-        <version>1.2</version>
-        <interface>
-            <name>ISecureElement</name>
-            <instance>SIM1</instance>
-            <instance>SIM2</instance>
-        </interface>
-    </hal>
-    <hal format="hidl" optional="true">
         <name>android.hardware.wifi.supplicant</name>
         <version>1.0-2</version>
         <interface>
@@ -109,6 +70,14 @@
         <version>1.0</version>
         <interface>
             <name>IAnt</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>com.motorola.hardware.display.panel</name>
+        <version>1.0-1</version>
+        <interface>
+            <name>IDisplayPanel</name>
             <instance>default</instance>
         </interface>
     </hal>
@@ -139,6 +108,18 @@
         </interface>
     </hal>
     <hal format="hidl" optional="true">
+        <name>com.qualcomm.qti.wifidisplayhal</name>
+        <version>1.0</version>
+        <interface>
+            <name>IDSManager</name>
+            <instance>wifidisplaydshal</instance>
+        </interface>
+        <interface>
+            <name>IHDCPSession</name>
+            <instance>wifidisplayhdcphal</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
         <name>com.quicinc.cne.api</name>
         <version>1.0-1</version>
         <interface>
@@ -155,18 +136,26 @@
         </interface>
     </hal>
     <hal format="hidl" optional="true">
-        <name>interfaces.factoryAta</name>
+        <name>motorola.hardware.camera.imgtuner</name>
         <version>1.0</version>
         <interface>
-            <name>IFactoryAta</name>
+            <name>IImageTuning</name>
             <instance>default</instance>
         </interface>
     </hal>
     <hal format="hidl" optional="true">
-        <name>interfaces.factoryInterface</name>
+        <name>motorola.hardware.fdrcontrol</name>
+        <version>1.0-2</version>
+        <interface>
+            <name>IFdrControl</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>motorola.hardware.fmradio</name>
         <version>1.0</version>
         <interface>
-            <name>IFactoryInterface</name>
+            <name>IMotFMRadio</name>
             <instance>default</instance>
         </interface>
     </hal>
@@ -196,39 +185,11 @@
         </interface>
     </hal>
     <hal format="hidl" optional="true">
-        <name>vendor.dolby.hardware.dms</name>
-        <version>2.0</version>
-        <interface>
-            <name>IDms</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="hidl" optional="true">
-        <name>vendor.goodix.hardware.biometrics.fingerprint</name>
-        <version>2.0-1</version>
-        <interface>
-            <name>IGoodixFingerprintDaemon</name>
-            <instance>default</instance>
-        </interface>
-        <interface>
-            <name>IGoodixFingerprintDaemonExt</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="hidl" optional="true">
         <name>vendor.nxp.hardware.nfc</name>
         <version>1.0-1</version>
         <version>2.0</version>
         <interface>
             <name>INqNfc</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="hidl" optional="true">
-        <name>vendor.nxp.nxpnfc</name>
-        <version>2.0</version>
-        <interface>
-            <name>INxpNfc</name>
             <instance>default</instance>
         </interface>
     </hal>
@@ -262,6 +223,14 @@
         <version>1.0</version>
         <interface>
             <name>Idiag</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.qti.esepowermanager</name>
+        <version>1.0-1</version>
+        <interface>
+            <name>IEsePowerManager</name>
             <instance>default</instance>
         </interface>
     </hal>
@@ -462,14 +431,6 @@
         </interface>
     </hal>
     <hal format="hidl" optional="true">
-        <name>vendor.qti.hardware.factory</name>
-        <version>1.0-1</version>
-        <interface>
-            <name>IFactory</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="hidl" optional="true">
         <name>vendor.qti.hardware.fingerprint</name>
         <version>1.0</version>
         <interface>
@@ -482,14 +443,6 @@
         <version>1.0</version>
         <interface>
             <name>IFmHci</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="hidl" optional="true">
-        <name>vendor.qti.hardware.fstman</name>
-        <version>1.0</version>
-        <interface>
-            <name>IFstManager</name>
             <instance>default</instance>
         </interface>
     </hal>
@@ -609,41 +562,6 @@
             <instance>default</instance>
         </interface>
     </hal>
-    <hal format="aidl" optional="true">
-        <name>vendor.qti.hardware.qxr</name>
-        <interface>
-            <name>IQXRCoreService</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="aidl" optional="true">
-        <name>vendor.qti.hardware.qxr</name>
-        <interface>
-            <name>IQXRCamService</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="aidl" optional="true">
-        <name>vendor.qti.hardware.qxr</name>
-        <interface>
-            <name>IQXRSplitService</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="aidl" optional="true">
-        <name>vendor.qti.hardware.qxr</name>
-        <interface>
-            <name>IQXRModService</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="aidl" optional="true">
-        <name>vendor.qti.hardware.qxr</name>
-        <interface>
-            <name>IQXRAudioService</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
     <hal format="hidl" optional="true">
         <name>vendor.qti.hardware.radio.am</name>
         <version>1.0</version>
@@ -677,15 +595,6 @@
             <name>IUimLpa</name>
             <instance>UimLpa0</instance>
             <instance>UimLpa1</instance>
-        </interface>
-    </hal>
-    <hal format="hidl" optional="true">
-        <name>vendor.qti.hardware.radio.qcriNvOpt</name>
-        <version>1.0</version>
-        <interface>
-            <name>IqcriNvOpt</name>
-            <instance>qcrinvopt0</instance>
-            <instance>qcrinvopt1</instance>
         </interface>
     </hal>
     <hal format="hidl" optional="true">
@@ -837,14 +746,6 @@
         </interface>
     </hal>
     <hal format="hidl" optional="true">
-        <name>vendor.qti.hardware.tui_comm</name>
-        <version>1.0</version>
-        <interface>
-            <name>ITuiComm</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="hidl" optional="true">
         <name>vendor.qti.hardware.vpp</name>
         <version>1.1-3</version>
         <version>2.0</version>
@@ -892,6 +793,26 @@
         <interface>
             <name>IWifiMyFtm</name>
             <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.qti.hardware.wifidisplaysession</name>
+        <version>1.0</version>
+        <interface>
+            <name>IWifiDisplaySession</name>
+            <instance>wifidisplaysession</instance>
+        </interface>
+        <interface>
+            <name>IWifiDisplaySessionAudioTrack</name>
+            <instance>wifidisplaysessionaudiotrack</instance>
+        </interface>
+        <interface>
+            <name>IWifiDisplaySessionImageTrack</name>
+            <instance>wifidisplaysessionimagetrack</instance>
+        </interface>
+        <interface>
+            <name>IWifiDisplaySessionVideoTrack</name>
+            <instance>wifidisplaysessionvideotrack</instance>
         </interface>
     </hal>
     <hal format="hidl" optional="true">
@@ -987,102 +908,6 @@
         <version>1.0</version>
         <interface>
             <name>IQtiVoicePrintService</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="hidl" optional="true">
-        <name>vendor.silead.hardware.fingerprintext</name>
-        <version>1.0</version>
-        <interface>
-            <name>ISileadFingerprint</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="hidl" optional="true">
-        <name>vendor.xiaomi.hardware.fingerprintextension</name>
-        <version>1.0</version>
-        <interface>
-            <name>IXiaomiFingerprint</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="hidl" optional="true">
-        <name>vendor.xiaomi.hardware.mfidoca</name>
-        <version>1.0</version>
-        <interface>
-            <name>IFidoService</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="hidl" optional="true">
-        <name>vendor.xiaomi.hardware.micharge</name>
-        <version>1.0</version>
-        <interface>
-            <name>IMiCharge</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="hidl" optional="true">
-        <name>vendor.xiaomi.hardware.misys</name>
-        <version>1.0</version>
-        <interface>
-            <name>IMiSys</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="hidl" optional="true">
-        <name>vendor.xiaomi.hardware.misys</name>
-        <version>2.0</version>
-        <interface>
-            <name>IMiSys</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="hidl" optional="true">
-        <name>vendor.xiaomi.hardware.misys</name>
-        <version>3.0</version>
-        <interface>
-            <name>IMiSys</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="hidl" optional="true">
-        <name>vendor.xiaomi.hardware.mlipay</name>
-        <version>1.0-1</version>
-        <interface>
-            <name>IMlipayService</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="hidl" optional="true">
-        <name>vendor.xiaomi.hardware.mtdservice</name>
-        <version>1.0-2</version>
-        <interface>
-            <name>IMTService</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="hidl" optional="true">
-        <name>vendor.xiaomi.hardware.tidaservice</name>
-        <version>1.0-2</version>
-        <interface>
-            <name>ITidaService</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="hidl" optional="true">
-        <name>vendor.xiaomi.hardware.vibratorfeature</name>
-        <version>1.0</version>
-        <interface>
-            <name>IVibratorFeature</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="hidl" optional="true">
-        <name>vendor.xiaomi.hardware.vsimapp</name>
-        <version>1.0</version>
-        <interface>
-            <name>IVSIMService</name>
             <instance>default</instance>
         </interface>
     </hal>

@@ -8,8 +8,8 @@
 
 set -e
 
-DEVICE=veux
-VENDOR=xiaomi
+DEVICE=corfur
+VENDOR=motorola
 
 # Load extract_utils and do some sanity checks
 MY_DIR="${BASH_SOURCE%/*}"
@@ -29,7 +29,6 @@ CLEAN_VENDOR=true
 
 KANG=
 SECTION=
-
 
 while [ "${#}" -gt 0 ]; do
     case "${1}" in
@@ -56,17 +55,22 @@ fi
 
 function blob_fixup() {
     case "${1}" in
-        vendor/lib64/camera/components/com.qti.node.mialgocontrol.so)
-            llvm-strip --strip-debug  "${2}"
-            "${PATCHELF}" --add-needed "libpiex_shim.so" "${2}"
-            ;;    
+        system_ext/lib64/libwfdnative.so)
+            ${PATCHELF} --remove-needed "android.hidl.base@1.0.so" "${2}"
+            ;;
+        system_ext/etc/permissions/moto-telephony.xml)
+            sed -i "s#/system/#/system_ext/#" "${2}"
+            ;;
+        vendor/lib64/vendor.qti.hardware.camera.postproc@1.0-service-impl.so)
+            hexdump -ve '1/1 "%.2X"' "${2}" | sed "s/130A0094/1F2003D5/g" | xxd -r -p > "${TMPDIR}/${1##*/}"
+            mv "${TMPDIR}/${1##*/}" "${2}"
+            ;;
     esac
 }
 
 # Initialize the helper
-setup_vendor "${DEVICE}" "${VENDOR}" "${ANDROID_ROOT}" true "${CLEAN_VENDOR}"
+setup_vendor "${DEVICE}" "${VENDOR}" "${ANDROID_ROOT}" false "${CLEAN_VENDOR}"
 
-extract "${MY_DIR}/proprietary-files.txt" "${SRC}" \
-        "${KANG}" --section "${SECTION}"
+extract "${MY_DIR}/proprietary-files.txt" "${SRC}" "${KANG}" --section "${SECTION}"
 
 "${MY_DIR}/setup-makefiles.sh"

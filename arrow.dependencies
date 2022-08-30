@@ -1,22 +1,14 @@
 [
   {
-    "repository": "android_device_xiaomi_veux-kernel",
-    "target_path": "device/xiaomi/veux-kernel"
+    "repository": "android_hardware_motorola",
+    "target_path": "hardware/motorola"
   },
   {
-    "repository": "android_vendor_xiaomi_veux",
-    "target_path": "vendor/xiaomi/veux"
+    "repository": "android_kernel_motorola_sm6375",
+    "target_path": "kernel/motorola/sm6375"
   },
   {
-    "repository": "android_kernel_xiaomi_lisa",
-    "target_path": "kernel/xiaomi/sm6375"
-  },
-  {
-    "repository": "android_packages_apps_GCamGOPrebuilt",
-    "target_path": "packages/apps/GCamGOPrebuilt"
-  },
-  {
-    "repository": "android_hardware_xiaomi",
-    "target_path": "hardware/xiaomi"
+    "repository": "android_vendor_motorola_corfur",
+    "target_path": "vendor/motorola/corfur"
   }
 ]

@@ -96,8 +96,6 @@ function configure_read_ahead_kb_values() {
 }
 
 function configure_memory_parameters() {
-	MemTotalStr=`cat /proc/meminfo | grep MemTotal`
-	MemTotal=${MemTotalStr:16:8}
 	# Set Memory parameters.
 
 	# Set swappiness to 100 for all targets
@@ -106,10 +104,6 @@ function configure_memory_parameters() {
 	# Disable wsf for all targets beacause we are using efk.
 	# wsf Range : 1..1000 So set to bare minimum value 1.
 	echo 1 > /proc/sys/vm/watermark_scale_factor
-	# Disable the feature of watermark boost for 8G and below device
-	if [ $MemTotal -le 8388608 ]; then
-		echo 0 > /proc/sys/vm/watermark_boost_factor
-	fi
 	configure_zram_parameters
 	configure_read_ahead_kb_values
 
@@ -145,11 +139,8 @@ echo 5 > /proc/sys/kernel/sched_ravg_window_nr_ticks
 echo 20000000 > /proc/sys/kernel/sched_task_unfilter_period
 
 # cpuset parameters
-echo 0-2     > /dev/cpuset/background/cpus
-echo 0-3     > /dev/cpuset/system-background/cpus
-echo 4-7     > /dev/cpuset/foreground/boost/cpus
-echo 0-2,4-7 > /dev/cpuset/foreground/cpus
-echo 0-7     > /dev/cpuset/top-app/cpus
+echo 0-5 > /dev/cpuset/background/cpus
+echo 0-5 > /dev/cpuset/system-background/cpus
 
 # Turn off scheduler boost at the end
 echo 0 > /proc/sys/kernel/sched_boost
@@ -180,7 +171,7 @@ echo -6 > /sys/devices/system/cpu/cpu7/sched_load_boost
 echo 85 > /sys/devices/system/cpu/cpufreq/policy6/schedutil/hispeed_load
 
 # configure input boost settings
-echo "0:1804800" > /sys/devices/system/cpu/cpu_boost/input_boost_freq
+echo "0:1113600" > /sys/devices/system/cpu/cpu_boost/input_boost_freq
 echo 120 > /sys/devices/system/cpu/cpu_boost/input_boost_ms
 
 # Enable bus-dcvs

@@ -1,14 +1,13 @@
-# Fingerprint
-com.fingerprints.extension::IFingerprintSensorTest				u:object_r:hal_fingerprint_hwservice:s0
-com.fingerprints.extension::IFingerprintNavigation				u:object_r:hal_fingerprint_hwservice:s0
-com.fingerprints.extension::IFingerprintEngineering				u:object_r:hal_fingerprint_hwservice:s0
-vendor.goodix.hardware.biometrics.fingerprint::IGoodixFingerprintDaemon		u:object_r:hal_fingerprint_hwservice:s0
-vendor.goodix.hardware.biometrics.fingerprint::IGoodixFingerprintDaemonExt	u:object_r:hal_fingerprint_hwservice:s0
-vendor.silead.hardware.fingerprintext::ISileadFingerprint			u:object_r:hal_fingerprint_hwservice:s0
+# Camera
+motorola.hardware.camera.desktop::ICameraDesktop                        u:object_r:hal_cameradesktop_hwservice:s0
 
-# Mlipay
-vendor.xiaomi.hardware.mlipay::IMlipayService					u:object_r:hal_mlipay_hwservice:s0
+# Fingerprint
+com.motorola.hardware.biometric.fingerprint::IMotoFingerPrint           u:object_r:hal_fingerprint_hwservice:s0
+com.motorola.hardware.biometric.fingerprint::IMotoFingerPrintSensorTest u:object_r:hal_fingerprint_hwservice:s0
+
+# IFAA
+vendor.zui.hardware.ifaa::IIFAADevice 					u:object_r:hal_ifaa_hwservice:s0
 
 # NFC
-vendor.nxp.nxpnfc::INxpNfc							u:object_r:hal_nfc_hwservice:s0
-vendor.nxp.nxpnfclegacy::INxpNfcLegacy						u:object_r:hal_nfc_hwservice:s0
+vendor.nxp.nxpese::INxpEse                                              u:object_r:nxpese_hwservice:s0
+vendor.nxp.nxpnfc::INxpNfc                                              u:object_r:nxpnfc_hwservice:s0

@@ -5,9 +5,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/arrow_veux.mk
+    $(LOCAL_DIR)/arrow_corfur.mk
 
 COMMON_LUNCH_CHOICES := \
-    arrow_veux-user \
-    arrow_veux-userdebug \
-    arrow_veux-eng
+    arrow_corfur-user \
+    arrow_corfur-userdebug \
+    arrow_corfur-eng
