@@ -72,6 +72,7 @@ firmware_directories /vendor/firmware_mnt/image/
 /dev/smd2                 0660   bluetooth  bluetooth
 /dev/smd3                 0660   bluetooth  bluetooth
 /dev/btpower              0660   bluetooth  system
+/dev/btfmslim             0660   bluetooth  system
 
 #permissions for pta
 /dev/pta                  0660   system     system
@@ -173,9 +174,14 @@ firmware_directories /vendor/firmware_mnt/image/
 
 #qvr
 /dev/qvr_external_sensor_ioctl      0660  system  system
-/sys/kernel/qvr_external_sensor/fd  0660  system  system
 /dev/bus/usb/*                      0660  root    usb
 /dev/hidraw*                        0660  root    usb
+
+#rawdump
+/dev/block/platform/soc/*/by-name/rawdump       0660   root     system
+# Trustonic TEE device
+/dev/mobicore             0600   system     system
+/dev/mobicore-user        0666   system     system
 
 # wlan
 /dev/wcnss_wlan           0660   system     system
@@ -294,7 +300,6 @@ firmware_directories /vendor/firmware_mnt/image/
 /sys/devices/virtual/input/input*                   enable_ps_sensor 0660  system   input
 /sys/devices/virtual/input/input*                   set_delay_ms     0660  system   input
 /sys/devices/virtual/input/input*                   do_flush         0660  system   input
-/dev/stmvl53l5            0660   system     camera
 
 # vm_bms
 /dev/vm_bms               0660   system     system
@@ -305,14 +310,6 @@ firmware_directories /vendor/firmware_mnt/image/
 /dev/wcnss_ctrl           0660   system     system
 /sys/devices/soc/600000.qcom,pcie/pci0000:00/0000:00:00.0/0000:01:00.0/net/wlan0/queues/rx-* rps_cpus 0660 system system
 /sys/devices/soc/600000.qcom,pcie/pci0000:00/0000:00:00.0/0000:01:00.0/net/p2p0/queues/rx-* rps_cpus 0660 system system
-
-# wigig
-/sys/bus/pci/drivers/wil6210* 0000:01:00.0/wil6210/fst_link_loss 0660 wifi wifi
-/sys/bus/pci/drivers/wil6210* 0000:01:00.0/wil6210/thermal_throttling 0660 system system
-/sys/bus/pci/drivers/wil6210* 0000:01:00.0/wil6210/snr_thresh 0660 wifi wifi
-/sys/bus/pci/drivers/wil6210* 0000:01:00.0/net/wigig0/queues/rx-0/rps_cpus 0660 system system
-/sys/bus/pci/drivers/wil6210* 0000:01:00.0/net/wigig0/gro_flush_timeout 0660 system system
-/sys/devices/virtual/net/bond0 queues/rx-0/rps_cpus 0660 system system
 
 #nfc permissions
 /dev/nfc-nci              0660    nfc         nfc
@@ -337,19 +334,6 @@ firmware_directories /vendor/firmware_mnt/image/
 /dev/qbt*                 0660   system     system
 /sys/class/fts/touch_aoi aoi_set 0660 root system
 /sys/class/fts/touch_aoi power_set 0660 root system
-
-# Goodix fingerprint device
-/dev/goodix_fp            0660   system     system
-
-# EgisTech fingerprint device
-/dev/esfp0                0660   system     system
-
-# Change permission for FPC fingerprint
-/sys/class/fingerprint/fpc1020 nav        0440     system    system
-/sys/class/fingerprint/fpc1020 irq        0440     system    system
-/sys/class/fingerprint/fpc1020 irq_cnt    0440     system    system
-/sys/class/fingerprint/fpc1020 dev_enable 0220     system    system
-/sys/class/fingerprint/fpc1020 vendor     0444     system    system
 
 #ImproveTouch device
 /dev/hbtp_input           0660   system     system
@@ -382,6 +366,13 @@ firmware_directories /vendor/firmware_mnt/image/
 # Kmsg device
 /dev/kmsg                                               0620   root       system
 
+# I2C
+/dev/i2c-*               0660   system     system
+
+# change permission for some capsensor nodes
+/sys/class/sensors/Moto\ CapSense\ Ch*   enable       0660    root    input
+/sys/class/sensors/Moto\ CapSense\ Ch*   poll_delay   0660    root    input
+
 # LED class devices
 /sys/class/leds/red      delay_on     0640    system    system
 /sys/class/leds/red      delay_off    0640    system    system
@@ -408,6 +399,9 @@ firmware_directories /vendor/firmware_mnt/image/
 /sys/devices/system/memory/memory* state    0660 system system
 
 /sys/devices/virtual/hdcp/msm_hdcp  min_level_change 0664    system  graphics
+
+#KGSL
+/sys/class/kgsl/kgsl-3d0    perfcounter              0660    root    shell
 
 # sys-fs display
 /sys/class/graphics/fb*     hpd                      0664    system  graphics
@@ -503,8 +497,15 @@ firmware_directories /vendor/firmware_mnt/image/
 /sys/devices/platform/soc/*.i2c/i2c-*/*-*/iio:device*   in_temp_scale                   0664    system  system
 /sys/devices/platform/soc/*.i2c/i2c-*/*-*/iio:device*   in_temp_scale_available         0664    system  system
 
-# I2C
-/dev/i2c-*                0660   system     system
+# fps device node
+/dev/fpsensor                                           0660   system     system
+/dev/goodix_fp                                          0664   system     system
+/dev/esfp0                                              0664   system     system
+/dev/silead_fp                                          0664   system     system
 
-# NFC ST Driver permissions
-/dev/st21nfc              0660   nfc        nfc
+# Change permission for FPC fingerprint
+/sys/class/fingerprint/fpc1020 nav        0440     system    system
+/sys/class/fingerprint/fpc1020 irq        0440     system    system
+/sys/class/fingerprint/fpc1020 irq_cnt    0440     system    system
+/sys/class/fingerprint/fpc1020 dev_enable 0220     system    system
+/sys/class/fingerprint/fpc1020 vendor     0444     system    system
