@@ -628,23 +628,12 @@ vendor/lib64/hw/vendor.qti.hardware.fm@1.0-impl.so
 vendor/lib64/vendor.qti.hardware.fm@1.0.so
 
 # Fingerprint
-vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-goodixservice
 vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-service-fpc
 vendor/bin/hw/fpc_ident
-vendor/bin/hw/goodix_ident
-vendor/etc/init/android.hardware.biometrics.fingerprint@2.1-goodixservice.rc
 vendor/etc/init/android.hardware.biometrics.fingerprint@2.1-service-fpc2.rc
 vendor/lib64/com.fingerprints.extension@1.0.so
 vendor/lib64/com.motorola.hardware.biometric.fingerprint@1.0.so
-vendor/lib64/hw/fingerprint.goodix.default.so
-vendor/lib64/libgf_ca.so
-vendor/lib64/libgf_hal.so
-vendor/lib64/libgoodixhwfingerprint.so
-vendor/lib64/vendor.goodix.hardware.biometrics.fingerprint@3.0.so
 vendor/lib64/vendor.qti.hardware.fingerprint@1.0.so
-
-vendor/firmware/goodix_cfg_group.bin
-vendor/firmware/goodix_firmware.bin
 
 # Gatekeeper
 vendor/bin/hw/android.hardware.gatekeeper@1.0-service-qti
@@ -1523,5 +1512,9 @@ vendor/etc/wifi/aoa_cldb_swl14.bin
 
 vendor/lib/libofflinelog.so
 vendor/lib64/libofflinelog.so
+vendor/lib/libofflinedump.so
+vendor/lib64/libofflinedump.so
 vendor/lib/libpowercore.so
 vendor/lib64/libpowercore.so
+vendor/lib/libqsap_sdk.so
+vendor/lib64/libqsap_sdk.so
