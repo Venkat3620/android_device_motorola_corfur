@@ -1518,3 +1518,7 @@ vendor/lib/libpowercore.so
 vendor/lib64/libpowercore.so
 vendor/lib/libqsap_sdk.so
 vendor/lib64/libqsap_sdk.so
+vendor/lib/libmot_afd.so
+vendor/lib64/libmot_afd.so
+vendor/lib/libbitmlenginev2.so
+vendor/lib64/libbitmlenginev2.so
